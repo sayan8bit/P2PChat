@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC Text Communication</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        padding: 20px;
+      }
+      #chat {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        max-height: 400px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        background: #fafafa;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      #messages div {
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 70%;
+        word-wrap: break-word;
+      }
+      .local {
+        align-self: flex-end;
+        background-color: #d1f7d6;
+        color: #333;
+      }
+      .remote {
+        align-self: flex-start;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      #inputSection {
+        display: flex;
+        gap: 10px;
+      }
+      #inputSection input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      #inputSection button {
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #inputSection button:hover {
+        background: #0056b3;
+      }
+      #clearButton {
+        margin-top: 10px;
+        padding: 10px;
+        background: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #clearButton:hover {
+        background: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat">
+      <div id="messages"></div>
+      <div id="inputSection">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+        />
+        <button id="sendButton">Send</button>
+      </div>
+      <button id="clearButton">Clear Chat History</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
